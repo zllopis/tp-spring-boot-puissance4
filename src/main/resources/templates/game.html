@@ -1,11 +1,32 @@
-
+<!DOCTYPE html >
 <html>
 <head>
 </head>
 <body>
 
-<p>Coucou</p> 
-</body>
+<p>Coucou</p>
+{{#game.tourJoueur1}}
+==>
+{{/game.tourJoueur1}}
+Joeur 1 : {{game.nom1}}
+{{ game.joueur1Gagnant }}
+{{game.tourJoueur1}}
+==>
+{{/game.tourJoueur1}}
+Joeur 2 : {{game.nom2}}
 
+
+<table border="1">
+    <tbody>
+    {{#game.jetons}}
+    <tr>
+                {{#.}}
+                <td><a href="http://localhost:8080/game/drop/{{-index}}">{{.}}</a></td>
+                {{/.}}
+            </tr>
+    {{/game.jetons}}
+    </tbody>
+    </table>
+</body>
 
 </html>
